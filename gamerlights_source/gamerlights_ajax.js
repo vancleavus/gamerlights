@@ -10,7 +10,6 @@ function submitColor(event) {
                     'fadeColor2' : fadeColor2,
                     'mode' : mode,
                     'timestamp' : Date.now()}; 
-    
     fetch("gamerlights_source/gamerlights_ajax_backend.php", {
         method: "POST",
         body: JSON.stringify(data),

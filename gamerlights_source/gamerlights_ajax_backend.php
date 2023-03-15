@@ -5,6 +5,7 @@ header("Content-Type: application/json");
 $requestInputString_json = file_get_contents('php://input');
 $requestInputObject_json = json_decode($requestInputString_json, true);
 
+
 if($requestInputObject_json['requestType'] == 'fetch'){
     $colorsStoredString_json = file_get_contents("colors.json");
     $colorsStoredObject_json = json_decode($colorsStoredString_json,true);
@@ -23,10 +24,9 @@ elseif($requestInputObject_json['requestType'] == 'submit'){
     $JSONFilePreSubmit_string = file_get_contents("colors.json");
     $JSONFilePreSubmit_json = json_decode($JSONFilePreSubmit_string,true);
     unset($requestInputObject_json['requestType']);
-    
     array_push($JSONFilePreSubmit_json["data"],$requestInputObject_json);
     $JSONFilePostSubmit_string = json_encode($JSONFilePreSubmit_json);
-    file_put_contents("colors.json", $JSONFilePostSubmit_string);
+    file_put_contents("colors.json", $JSONFilePostSubmit_string);    
     echo json_encode(array(
         "success" => true,
         "time" => date("h:i:sa"),
