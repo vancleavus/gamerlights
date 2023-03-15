@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body {
+	background-color: #220033;
+	}
+	button, input {
+	background-color: gray;
+	}
+	label {
+	color: white;
+	}
+</style>
+<head><title>Gamer Lights</title></head>
+<body>
+<p>
+		<input type="hidden" name="reset" value="y"/>
+		<button id="reset">Default Colors</button>
+</p>
+<p>
+		<label for="sColor">Static Color:</label>
+		<input type="color" name="sColor" id="sColor" value="#a00040"><br>
+		<button id="static">Submit Static</button>
+</p>
+<p>
+		<label for="fColor1">Fade Color 1:</label>
+		<input type="color" name="fColor1" id="fColor1" value="#d00010"><br>
+		<label for="fColor2">Fade Color 2:</label>
+		<input type="color" name="fColor2" id="fColor2" value="#4020a0"><br>
+		<button id="fade">Submit Fade</button>
+	
+</p>
+<p>
+		<input type="hidden" name="rainbow" value="y"/>
+		<button id="rainbow">Submit Rainbow</button>
+</p>
+<p>
+		<input type="hidden" name="forceQuit" value="y"/>
+		<button id="off">Turn Off Lights</button>
+</p>
+<canvas id="colorCanvas" width="200" height="200" style="display: none; background-image: linear-gradient(magenta, red, yellow, green, cyan, blue, purple)" ></canvas>
+
+
+<script type="text/javascript" src="gamerlights_source/gamerlights_ajax.js"></script>
+</body>
+</html>
